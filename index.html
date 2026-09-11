@@ -539,6 +539,7 @@ footer{padding:34px 0;text-align:center;color:var(--text-muted);font-size:.82rem
         </div>
         <button class="modal-close" id="certsModalClose" type="button" aria-label="Close">✕</button>
       </div>
+      <div class="filter-bar" id="certsModalFilterBar" style="padding:14px 26px 0;margin-bottom:0;"></div>
       <div class="modal-body" id="certsModalBody"></div>
     </div>
   </div>
@@ -1029,48 +1030,48 @@ certs.forEach(c=>{
 
 /* ---------------- DATA: All 42 certificates (for the "See all" modal) ---------------- */
 const allCerts = [
-  { name:'Google AI Professional Certificate', org:'Google', date:'September 2026', type:'Specialization / Professional Certificate', url:'https://www.coursera.org/account/accomplishments/specialization/3RSORDPVFD9P' },
-  { name:'Principles of UX/UI Design', org:'Meta', date:'December 2023', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/JE78R5A3ZT57' },
-  { name:'Programming Fundamentals in Kotlin', org:'Meta', date:'November 2023', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/QEFFUX7M286Q' },
-  { name:'Version Control', org:'Meta', date:'November 2023', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/UNLZ8YUEW754' },
-  { name:'IBM Data Science Professional Certificate', org:'IBM', date:'October 2023', type:'Specialization / Professional Certificate', url:'https://www.coursera.org/account/accomplishments/specialization/X7V45HUFGFJT' },
-  { name:'Introduction to Android Mobile Application Development', org:'Meta', date:'October 2023', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/YNB3XVTA3VM4' },
-  { name:'Applied Data Science Capstone', org:'IBM', date:'October 2023', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/BY5U4PPXEE4V' },
-  { name:'Machine Learning with Python', org:'IBM', date:'September 2023', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/QD7HE2H368ZV' },
-  { name:'Python Project for Data Science', org:'IBM', date:'September 2023', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/5KHFUK86G3C3' },
-  { name:'Data Visualization with Python', org:'IBM', date:'September 2023', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/KG7DAETCA48B' },
-  { name:'Introduction to Data Science Specialization', org:'IBM', date:'August 2023', type:'Specialization / Professional Certificate', url:'https://www.coursera.org/account/accomplishments/specialization/LZLYT3RNRY9D' },
-  { name:'Data Analysis with Python', org:'IBM', date:'August 2023', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/ZLD4D2HBVCUX' },
-  { name:'Python for Data Science, AI & Development', org:'IBM', date:'August 2023', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/UCR4CE6K5H3K' },
-  { name:'Data Science Methodology', org:'IBM', date:'August 2023', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/6B53R8WURQTB' },
-  { name:'Tools for Data Science', org:'IBM', date:'July 2023', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/N69NYW6UMTUH' },
-  { name:'What is Data Science?', org:'IBM', date:'July 2023', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/ULTG6DXUQM87' },
-  { name:'Python for Everybody Specialization', org:'University of Michigan', date:'June 2023', type:'Specialization / Professional Certificate', url:'https://www.coursera.org/account/accomplishments/specialization/8FKY7ZLFP9XH' },
-  { name:'Capstone: Retrieving, Processing, and Visualizing Data with Python', org:'University of Michigan', date:'June 2023', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/VATHFWT8K3EG' },
-  { name:'Using Databases with Python', org:'University of Michigan', date:'June 2023', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/ZNMPMLHW88NB' },
-  { name:'Machine Learning Specialization', org:'DeepLearning.AI · Stanford University', date:'April 2023', type:'Specialization / Professional Certificate', url:'https://www.coursera.org/account/accomplishments/specialization/CYELFM2AQ5DR' },
-  { name:'Unsupervised Learning, Recommenders, Reinforcement Learning', org:'DeepLearning.AI · Stanford University', date:'April 2023', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/3EBE77ZH2W5L' },
-  { name:'Advanced Learning Algorithms', org:'DeepLearning.AI · Stanford University', date:'March 2023', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/GX956979EA7A' },
-  { name:'Supervised Machine Learning: Regression and Classification', org:'DeepLearning.AI · Stanford University', date:'March 2023', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/3HNAM5HPVHNL' },
-  { name:'Neural Networks and Deep Learning', org:'DeepLearning.AI', date:'March 2023', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/BYZK3X6HG7M7' },
-  { name:'Building Similarity Based Recommendation System', org:'Deprecated Guided Projects', date:'February 2023', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/X97LMQYYDQJA' },
-  { name:'Introduction to C# Programming and Unity', org:'University of Colorado System', date:'March 2021', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/TNVKB2NZ7JCP' },
-  { name:'Using Python to Access Web Data', org:'University of Michigan', date:'October 2020', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/BRTGBRMBX6D4' },
-  { name:'Python Data Structures', org:'University of Michigan', date:'October 2020', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/SW34UF8NPTPJ' },
-  { name:'Creating an Interactive Story with Flutter', org:'Deprecated Guided Projects', date:'October 2020', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/9SZNYET99X4L' },
-  { name:'Perfect Tenses and Modals', org:'University of California, Irvine', date:'October 2020', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/AJ76494VKNHY' },
-  { name:'Programming for Everybody (Getting Started with Python)', org:'University of Michigan', date:'October 2020', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/UNC2F23RUMSS' },
-  { name:'Databases and SQL for Data Science with Python', org:'IBM', date:'July 2020', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/QCFQRRNK337E' },
-  { name:'Introduction to Artificial Intelligence (AI)', org:'IBM', date:'July 2020', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/U3FQYYVMRDGS' },
-  { name:'Object-Oriented Design', org:'University of Alberta', date:'May 2020', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/CDNWM5TPYA7F' },
-  { name:'Internet Connection: How to Get Online?', org:'Cisco', date:'April 2020', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/GUUHFF65FVRB' },
-  { name:'Work Smarter, Not Harder: Time Management for Personal & Professional Productivity', org:'University of California, Irvine', date:'April 2020', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/TJQ4X76QPBF4' },
-  { name:'Building Web Applications in PHP', org:'University of Michigan', date:'March 2020', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/LG2XWQSRNYMF' },
-  { name:'Interactivity with JavaScript', org:'University of Michigan', date:'March 2020', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/LNCU75LHXPBN' },
-  { name:'Introduction to CSS3', org:'University of Michigan', date:'March 2020', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/TBRJBY9E45F9' },
-  { name:'Introduction to HTML5', org:'University of Michigan', date:'September 2019', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/4KY9L8A8NKF2' },
-  { name:'Data Structures', org:'University of California San Diego', date:'August 2019', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/52W4B8QFH2YU' },
-  { name:'Guitar for Beginners', org:'Berklee', date:'August 2019', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/MEGUR2ZX7XQP' }
+  { name:'Google AI Professional Certificate', org:'Google', date:'September 2026', type:'Specialization / Professional Certificate', url:'https://www.coursera.org/account/accomplishments/specialization/3RSORDPVFD9P', field:'ai-ml' },
+  { name:'Principles of UX/UI Design', org:'Meta', date:'December 2023', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/JE78R5A3ZT57', field:'professional' },
+  { name:'Programming Fundamentals in Kotlin', org:'Meta', date:'November 2023', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/QEFFUX7M286Q', field:'mobile-game' },
+  { name:'Version Control', org:'Meta', date:'November 2023', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/UNLZ8YUEW754', field:'web-programming' },
+  { name:'IBM Data Science Professional Certificate', org:'IBM', date:'October 2023', type:'Specialization / Professional Certificate', url:'https://www.coursera.org/account/accomplishments/specialization/X7V45HUFGFJT', field:'data-science' },
+  { name:'Introduction to Android Mobile Application Development', org:'Meta', date:'October 2023', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/YNB3XVTA3VM4', field:'mobile-game' },
+  { name:'Applied Data Science Capstone', org:'IBM', date:'October 2023', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/BY5U4PPXEE4V', field:'data-science' },
+  { name:'Machine Learning with Python', org:'IBM', date:'September 2023', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/QD7HE2H368ZV', field:'ai-ml' },
+  { name:'Python Project for Data Science', org:'IBM', date:'September 2023', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/5KHFUK86G3C3', field:'data-science' },
+  { name:'Data Visualization with Python', org:'IBM', date:'September 2023', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/KG7DAETCA48B', field:'data-science' },
+  { name:'Introduction to Data Science Specialization', org:'IBM', date:'August 2023', type:'Specialization / Professional Certificate', url:'https://www.coursera.org/account/accomplishments/specialization/LZLYT3RNRY9D', field:'data-science' },
+  { name:'Data Analysis with Python', org:'IBM', date:'August 2023', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/ZLD4D2HBVCUX', field:'data-science' },
+  { name:'Python for Data Science, AI & Development', org:'IBM', date:'August 2023', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/UCR4CE6K5H3K', field:'data-science' },
+  { name:'Data Science Methodology', org:'IBM', date:'August 2023', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/6B53R8WURQTB', field:'data-science' },
+  { name:'Tools for Data Science', org:'IBM', date:'July 2023', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/N69NYW6UMTUH', field:'data-science' },
+  { name:'What is Data Science?', org:'IBM', date:'July 2023', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/ULTG6DXUQM87', field:'data-science' },
+  { name:'Python for Everybody Specialization', org:'University of Michigan', date:'June 2023', type:'Specialization / Professional Certificate', url:'https://www.coursera.org/account/accomplishments/specialization/8FKY7ZLFP9XH', field:'web-programming' },
+  { name:'Capstone: Retrieving, Processing, and Visualizing Data with Python', org:'University of Michigan', date:'June 2023', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/VATHFWT8K3EG', field:'data-science' },
+  { name:'Using Databases with Python', org:'University of Michigan', date:'June 2023', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/ZNMPMLHW88NB', field:'databases' },
+  { name:'Machine Learning Specialization', org:'DeepLearning.AI · Stanford University', date:'April 2023', type:'Specialization / Professional Certificate', url:'https://www.coursera.org/account/accomplishments/specialization/CYELFM2AQ5DR', field:'ai-ml' },
+  { name:'Unsupervised Learning, Recommenders, Reinforcement Learning', org:'DeepLearning.AI · Stanford University', date:'April 2023', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/3EBE77ZH2W5L', field:'ai-ml' },
+  { name:'Advanced Learning Algorithms', org:'DeepLearning.AI · Stanford University', date:'March 2023', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/GX956979EA7A', field:'ai-ml' },
+  { name:'Supervised Machine Learning: Regression and Classification', org:'DeepLearning.AI · Stanford University', date:'March 2023', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/3HNAM5HPVHNL', field:'ai-ml' },
+  { name:'Neural Networks and Deep Learning', org:'DeepLearning.AI', date:'March 2023', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/BYZK3X6HG7M7', field:'ai-ml' },
+  { name:'Building Similarity Based Recommendation System', org:'Deprecated Guided Projects', date:'February 2023', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/X97LMQYYDQJA', field:'ai-ml' },
+  { name:'Introduction to C# Programming and Unity', org:'University of Colorado System', date:'March 2021', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/TNVKB2NZ7JCP', field:'mobile-game' },
+  { name:'Using Python to Access Web Data', org:'University of Michigan', date:'October 2020', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/BRTGBRMBX6D4', field:'web-programming' },
+  { name:'Python Data Structures', org:'University of Michigan', date:'October 2020', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/SW34UF8NPTPJ', field:'web-programming' },
+  { name:'Creating an Interactive Story with Flutter', org:'Deprecated Guided Projects', date:'October 2020', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/9SZNYET99X4L', field:'mobile-game' },
+  { name:'Perfect Tenses and Modals', org:'University of California, Irvine', date:'October 2020', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/AJ76494VKNHY', field:'professional' },
+  { name:'Programming for Everybody (Getting Started with Python)', org:'University of Michigan', date:'October 2020', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/UNC2F23RUMSS', field:'web-programming' },
+  { name:'Databases and SQL for Data Science with Python', org:'IBM', date:'July 2020', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/QCFQRRNK337E', field:'databases' },
+  { name:'Introduction to Artificial Intelligence (AI)', org:'IBM', date:'July 2020', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/U3FQYYVMRDGS', field:'ai-ml' },
+  { name:'Object-Oriented Design', org:'University of Alberta', date:'May 2020', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/CDNWM5TPYA7F', field:'web-programming' },
+  { name:'Internet Connection: How to Get Online?', org:'Cisco', date:'April 2020', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/GUUHFF65FVRB', field:'professional' },
+  { name:'Work Smarter, Not Harder: Time Management for Personal & Professional Productivity', org:'University of California, Irvine', date:'April 2020', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/TJQ4X76QPBF4', field:'professional' },
+  { name:'Building Web Applications in PHP', org:'University of Michigan', date:'March 2020', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/LG2XWQSRNYMF', field:'web-programming' },
+  { name:'Interactivity with JavaScript', org:'University of Michigan', date:'March 2020', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/LNCU75LHXPBN', field:'web-programming' },
+  { name:'Introduction to CSS3', org:'University of Michigan', date:'March 2020', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/TBRJBY9E45F9', field:'web-programming' },
+  { name:'Introduction to HTML5', org:'University of Michigan', date:'September 2019', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/4KY9L8A8NKF2', field:'web-programming' },
+  { name:'Data Structures', org:'University of California San Diego', date:'August 2019', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/52W4B8QFH2YU', field:'web-programming' },
+  { name:'Guitar for Beginners', org:'Berklee', date:'August 2019', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/MEGUR2ZX7XQP', field:'professional' }
 ];
 
 /* ---------------- Certificates modal ---------------- */
@@ -1081,9 +1082,36 @@ const certsModalClose = document.getElementById('certsModalClose');
 let certsModalBuilt = false;
 let lastFocusedBeforeModal = null;
 
-function buildCertsModalList(){
-  if(certsModalBuilt) return;
-  certsModalBody.innerHTML = allCerts.map(c => {
+const certCategories = [
+  {key:"all", label:"All"},
+  {key:"data-science", label:"Data Science"},
+  {key:"ai-ml", label:"AI & Machine Learning"},
+  {key:"web-programming", label:"Web & Programming"},
+  {key:"mobile-game", label:"Mobile & Game Dev"},
+  {key:"databases", label:"Databases"},
+  {key:"professional", label:"Professional Skills"}
+];
+const certsModalFilterBar = document.getElementById('certsModalFilterBar');
+let certsModalFilterBuilt = false;
+function buildCertsModalFilterBar(){
+  if(certsModalFilterBuilt) return;
+  certCategories.forEach((cc,i)=>{
+    const btn = document.createElement('button');
+    btn.className = 'filter-btn' + (i===0 ? ' active' : '');
+    btn.textContent = cc.label;
+    btn.dataset.key = cc.key;
+    btn.addEventListener('click', ()=>{
+      certsModalFilterBar.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      renderCertsModalList(cc.key);
+    });
+    certsModalFilterBar.appendChild(btn);
+  });
+  certsModalFilterBuilt = true;
+}
+function renderCertsModalList(filter){
+  const list = (!filter || filter==='all') ? allCerts : allCerts.filter(c=>c.field===filter);
+  certsModalBody.innerHTML = list.map(c => {
     const logo = orgLogoUrl(c.org);
     return `
     <div class="all-cert-row">
@@ -1097,10 +1125,14 @@ function buildCertsModalList(){
       <a class="all-cert-link" href="${c.url}" target="_blank" rel="noopener">Verify ↗</a>
     </div>`;
   }).join('');
+  if(!list.length){
+    certsModalBody.innerHTML = '<p class="certs-note" style="padding:20px 0;">No certificates match this filter.</p>';
+  }
   certsModalBuilt = true;
 }
 function openCertsModal(){
-  buildCertsModalList();
+  buildCertsModalFilterBar();
+  if(!certsModalBuilt) renderCertsModalList('all');
   lastFocusedBeforeModal = document.activeElement;
   certsModalOverlay.removeAttribute('hidden');
   document.body.style.overflow = 'hidden';
