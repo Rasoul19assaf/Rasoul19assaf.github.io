@@ -479,7 +479,7 @@ footer{padding:34px 0;text-align:center;color:var(--text-muted);font-size:.82rem
         <div class="stat"><div class="stat-num">6+</div><div class="stat-label">Years Experience</div></div>
         <div class="stat"><div class="stat-num">20</div><div class="stat-label">Projects Delivered</div></div>
         <div class="stat"><div class="stat-num">500K+</div><div class="stat-label">App Downloads</div></div>
-        <div class="stat"><div class="stat-num">42</div><div class="stat-label">Certifications &amp; Courses</div></div>
+        <div class="stat"><div class="stat-num">43</div><div class="stat-label">Certifications &amp; Courses</div></div>
       </div>
     </div>
   </section>
@@ -520,11 +520,11 @@ footer{padding:34px 0;text-align:center;color:var(--text-muted);font-size:.82rem
     <div class="container">
       <div class="eyebrow reveal">Continuous Learning</div>
       <h2 class="section-title reveal">Certifications</h2>
-      <p class="section-sub reveal">Featured credentials from a record of 42 completed Coursera courses and specializations spanning data science, machine learning, and mobile development.</p>
+      <p class="section-sub reveal">Featured credentials from a record of 43 completed Coursera courses and specializations spanning data science, machine learning, and mobile development.</p>
       <div class="certs-grid" id="certsGrid"></div>
       <div class="certs-actions reveal">
-        <button class="btn btn-outline btn-sm" id="seeAllCertsBtn" type="button" aria-haspopup="dialog">See all 42 certificates ↗</button>
-        <p class="certs-note">11 featured above + 31 more across web fundamentals, databases, C#/Unity, and professional skills.</p>
+        <button class="btn btn-outline btn-sm" id="seeAllCertsBtn" type="button" aria-haspopup="dialog">See all 43 certificates ↗</button>
+        <p class="certs-note">12 featured above + 31 more across web fundamentals, databases, C#/Unity, and professional skills.</p>
       </div>
     </div>
   </section>
@@ -535,7 +535,7 @@ footer{padding:34px 0;text-align:center;color:var(--text-muted);font-size:.82rem
       <div class="modal-header">
         <div>
           <div class="modal-title" id="certsModalTitle">All Certificates</div>
-          <div class="modal-sub">42 completed Coursera courses &amp; specializations, most recent first</div>
+          <div class="modal-sub">43 completed Coursera courses &amp; specializations, most recent first</div>
         </div>
         <button class="modal-close" id="certsModalClose" type="button" aria-label="Close">✕</button>
       </div>
@@ -976,6 +976,7 @@ renderProjects('all');
 
 /* ---------------- DATA: Certifications ---------------- */
 const certs = [
+  { name:"Develop Generative AI Applications: Get Started", org:"IBM", date:"Sep 2026", type:"Course", url:"https://coursera.org/verify/79O6C7E82NBE", mark:"GAI" },
   { name:"Google AI Professional Certificate", org:"Google", date:"Sep 2026", type:"Specialization", url:"https://www.coursera.org/account/accomplishments/specialization/3RSORDPVFD9P", mark:"AI" },
   { name:"IBM Data Science Professional Certificate", org:"IBM", date:"Oct 2023", type:"Specialization", url:"https://www.coursera.org/account/accomplishments/specialization/X7V45HUFGFJT", mark:"DS" },
   { name:"Machine Learning Specialization", org:"DeepLearning.AI · Stanford University", date:"Apr 2023", type:"Specialization", url:"https://www.coursera.org/account/accomplishments/specialization/CYELFM2AQ5DR", mark:"ML" },
@@ -1030,6 +1031,7 @@ certs.forEach(c=>{
 
 /* ---------------- DATA: All 42 certificates (for the "See all" modal) ---------------- */
 const allCerts = [
+  { name:'Develop Generative AI Applications: Get Started', org:'IBM', date:'September 2026', type:'Course', url:'https://coursera.org/verify/79O6C7E82NBE', field:'ai-ml' },
   { name:'Google AI Professional Certificate', org:'Google', date:'September 2026', type:'Specialization / Professional Certificate', url:'https://www.coursera.org/account/accomplishments/specialization/3RSORDPVFD9P', field:'ai-ml' },
   { name:'Principles of UX/UI Design', org:'Meta', date:'December 2023', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/JE78R5A3ZT57', field:'professional' },
   { name:'Programming Fundamentals in Kotlin', org:'Meta', date:'November 2023', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/QEFFUX7M286Q', field:'mobile-game' },
