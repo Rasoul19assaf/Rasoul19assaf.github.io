@@ -187,6 +187,16 @@ nav{
 .job-bullets li::before{content:"▸";position:absolute;left:0;color:var(--teal);}
 .job-bullets li b{color:var(--teal);}
 .job-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;}
+.job-rec{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-size:.84rem;font-weight:600;color:var(--teal);border:1px solid var(--teal);border-radius:999px;padding:5px 14px;transition:background .2s,color .2s;}
+.job-rec:hover{background:var(--teal);color:#fff;}
+/* ---------- RECOMMENDATIONS ---------- */
+.rec-card{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--teal);border-radius:var(--radius);padding:30px 32px;box-shadow:var(--shadow);max-width:820px;}
+.rec-quote{font-family:Georgia,'Times New Roman',serif;font-size:1.08rem;line-height:1.7;color:var(--text);font-style:italic;}
+.rec-quote p+p{margin-top:12px;}
+.rec-foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px;margin-top:22px;padding-top:18px;border-top:1px solid var(--border);}
+.rec-name{font-weight:700;color:var(--text);}
+.rec-role{color:var(--text-muted);font-size:.9rem;}
+@media (max-width:600px){.rec-card{padding:22px 20px;}.rec-quote{font-size:1rem;}}
 .tag{
   font-size:.74rem;padding:4px 11px;border-radius:999px;background:var(--bg);
   border:1px solid var(--border);color:var(--text-muted);font-weight:500;
@@ -494,6 +504,24 @@ footer{padding:34px 0;text-align:center;color:var(--text-muted);font-size:.82rem
     </div>
   </section>
 
+  <!-- RECOMMENDATIONS -->
+  <section id="recommendations" style="padding-top:0;">
+    <div class="container">
+      <div class="eyebrow reveal">Recommendations</div>
+      <h2 class="section-title reveal">What Colleagues Say</h2>
+      <div class="rec-card reveal">
+        <div class="rec-quote">
+          <p>&ldquo;He played an important role in developing the first version of our admin panel for our partner football fields&hellip; His work helped us move from an early-stage product to a functional solution that could be used in a real operational environment.&rdquo;</p>
+          <p>&ldquo;I am happy to recommend Rasoul to any team or organization looking for a serious, rigorous, and dependable software engineering professional.&rdquo;</p>
+        </div>
+        <div class="rec-foot">
+          <div><div class="rec-name">Ali Almansoori</div><div class="rec-role">CEO, Tanafos · October 2026</div></div>
+          <a class="job-rec" style="margin-top:0;" href="Tanafos_Recommendation_Letter.pdf" target="_blank" rel="noopener">📄 Read the full letter (PDF)</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- SKILLS -->
   <section id="skills" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
     <div class="container">
@@ -697,6 +725,7 @@ const roles = [
   {
     company:"Tanafos (Concurrent, Part-time)", title:"Senior Software Engineer", location:"Dubai, UAE",
     period:"Jan 2026 — Mar 2026", current:false,
+    rec:{url:"Tanafos_Recommendation_Letter.pdf", label:"Letter of Recommendation from the CEO"},
     bullets:[
       "Built a responsive <b>Flutter Web</b> admin and business-intelligence platform spanning three core areas — sports-facility bookings, revenue, and operational performance.",
       "Re-architected Firestore usage by precomputing stats via Cloud Functions and reducing real-time listeners in the admin dashboard, cutting Firestore read/write costs by <b>~70%</b> across the dashboards, bookings, and user-management modules.",
@@ -750,6 +779,7 @@ roles.forEach(r=>{
       <div class="job-company"><b>${r.company}</b> · ${r.location}</div>
       <ul class="job-bullets">${r.bullets.map(b=>`<li>${b}</li>`).join('')}</ul>
       <div class="job-tags">${r.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+      ${r.rec ? `<a class="job-rec" href="${r.rec.url}" target="_blank" rel="noopener">📄 ${r.rec.label}</a>` : ''}
     </div>`;
   timeline.appendChild(el);
 });
