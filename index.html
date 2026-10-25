@@ -489,7 +489,7 @@ footer{padding:34px 0;text-align:center;color:var(--text-muted);font-size:.82rem
         <div class="stat"><div class="stat-num">6+</div><div class="stat-label">Years Experience</div></div>
         <div class="stat"><div class="stat-num">20</div><div class="stat-label">Projects Delivered</div></div>
         <div class="stat"><div class="stat-num">500K+</div><div class="stat-label">App Downloads</div></div>
-        <div class="stat"><div class="stat-num">43</div><div class="stat-label">Certifications &amp; Courses</div></div>
+        <div class="stat"><div class="stat-num">49</div><div class="stat-label">Certifications &amp; Courses</div></div>
       </div>
     </div>
   </section>
@@ -548,11 +548,11 @@ footer{padding:34px 0;text-align:center;color:var(--text-muted);font-size:.82rem
     <div class="container">
       <div class="eyebrow reveal">Continuous Learning</div>
       <h2 class="section-title reveal">Certifications</h2>
-      <p class="section-sub reveal">Featured credentials from a record of 43 completed Coursera courses and specializations spanning data science, machine learning, and mobile development.</p>
+      <p class="section-sub reveal">Featured credentials from a record of 49 completed Coursera courses and specializations spanning generative AI, RAG and AI agents, data science, machine learning, and mobile development.</p>
       <div class="certs-grid" id="certsGrid"></div>
       <div class="certs-actions reveal">
-        <button class="btn btn-outline btn-sm" id="seeAllCertsBtn" type="button" aria-haspopup="dialog">See all 43 certificates ↗</button>
-        <p class="certs-note">12 featured above + 31 more across web fundamentals, databases, C#/Unity, and professional skills.</p>
+        <button class="btn btn-outline btn-sm" id="seeAllCertsBtn" type="button" aria-haspopup="dialog">See all 49 certificates ↗</button>
+        <p class="certs-note">15 featured above + 34 more across web fundamentals, databases, C#/Unity, and professional skills.</p>
       </div>
     </div>
   </section>
@@ -563,7 +563,7 @@ footer{padding:34px 0;text-align:center;color:var(--text-muted);font-size:.82rem
       <div class="modal-header">
         <div>
           <div class="modal-title" id="certsModalTitle">All Certificates</div>
-          <div class="modal-sub">43 completed Coursera courses &amp; specializations, most recent first</div>
+          <div class="modal-sub">49 completed Coursera courses &amp; specializations, most recent first</div>
         </div>
         <button class="modal-close" id="certsModalClose" type="button" aria-label="Close">✕</button>
       </div>
@@ -792,7 +792,7 @@ const skillGroups = [
   { name:"Auth &amp; Data Persistence", icon:"🔐", chips:["JWT Auth","Social Login (Google/Apple/FB)","Flutter Secure Storage","Realm Database","SharedPreferences"] },
   { name:"Maps, Media &amp; Device", icon:"🗺️", chips:["Mapbox","Google Maps","Geolocation","Geofencing","Camera APIs","Video/Audio Processing","Deep Linking"] },
   { name:"Analytics &amp; Monetization", icon:"📊", chips:["Firebase Analytics","Crashlytics","Microsoft Clarity","In-App Purchases","Google Mobile Ads","BI Dashboards"] },
-  { name:"AI Engineering &amp; Generative AI", icon:"🤖", chips:["Prompt Engineering","LLM Apps","LangChain (Chains, Agents, Tool Calling)","Open-Source LLMs (Llama 3, Granite, Mixtral)","Computer Vision (AWS Rekognition, ML Kit)","On-Device ML (TensorFlow Lite)","AI-Assisted Dev (Claude Code, Cursor, Copilot)"] },
+  { name:"AI Engineering &amp; Generative AI", icon:"🤖", chips:["Prompt Engineering","LLM Apps","RAG (Retrieval-Augmented Generation)","Vector DBs (ChromaDB, FAISS)","LangChain (LCEL, Tool Calling, Agents)","LangGraph (ReAct, Multi-Agent)","LlamaIndex","Multimodal AI (Whisper, DALL·E)","Open-Source LLMs (Llama, Granite, Mixtral)","Computer Vision (AWS Rekognition, ML Kit)","On-Device ML (TensorFlow Lite)","AI-Assisted Dev (Claude Code, Cursor, Copilot)"] },
   { name:"Data Science &amp; ML", icon:"📈", chips:["Python","SQL","Data Analysis","Machine Learning","NLP","Scikit-learn / XGBoost","Streamlit &amp; Plotly","Web Scraping","Jupyter/Colab"] },
   { name:"Game, Simulation &amp; Algorithms", icon:"🎮", chips:["Unity","Real-Time Game Logic","Leaderboards &amp; Matchmaking","Physics Simulation","A*/BFS/DFS Search"] },
   { name:"Delivery &amp; Collaboration", icon:"🤝", chips:["Agile","Git","Jira","Trello","Slack","Figma","Miro","Mentoring","Stakeholder Collaboration"] }
@@ -1008,6 +1008,9 @@ renderProjects('all');
 
 /* ---------------- DATA: Certifications ---------------- */
 const certs = [
+  { name:"Agentic AI with LangChain and LangGraph", org:"IBM", date:"Oct 2026", type:"Course", url:"https://coursera.org/verify/PD4M9ENT53N2", mark:"LG" },
+  { name:"Fundamentals of Building AI Agents", org:"IBM", date:"Oct 2026", type:"Course", url:"https://coursera.org/verify/1GCXZJXA3HC5", mark:"AGT" },
+  { name:"Advanced RAG with Vector Databases and Retrievers", org:"IBM", date:"Oct 2026", type:"Course", url:"https://coursera.org/verify/63PV811XWTZB", mark:"RAG" },
   { name:"Develop Generative AI Applications: Get Started", org:"IBM", date:"Sep 2026", type:"Course", url:"https://coursera.org/verify/79O6C7E82NBE", mark:"GAI" },
   { name:"Google AI Professional Certificate", org:"Google", date:"Sep 2026", type:"Specialization", url:"https://www.coursera.org/account/accomplishments/specialization/3RSORDPVFD9P", mark:"AI" },
   { name:"IBM Data Science Professional Certificate", org:"IBM", date:"Oct 2023", type:"Specialization", url:"https://www.coursera.org/account/accomplishments/specialization/X7V45HUFGFJT", mark:"DS" },
@@ -1063,6 +1066,12 @@ certs.forEach(c=>{
 
 /* ---------------- DATA: All 42 certificates (for the "See all" modal) ---------------- */
 const allCerts = [
+  { name:'Agentic AI with LangChain and LangGraph', org:'IBM', date:'October 2026', type:'Course', url:'https://coursera.org/verify/PD4M9ENT53N2', field:'ai-ml' },
+  { name:'Fundamentals of Building AI Agents', org:'IBM', date:'October 2026', type:'Course', url:'https://coursera.org/verify/1GCXZJXA3HC5', field:'ai-ml' },
+  { name:'Build Multimodal Generative AI Applications', org:'IBM', date:'October 2026', type:'Course', url:'https://coursera.org/verify/FU9V0AW2R81J', field:'ai-ml' },
+  { name:'Advanced RAG with Vector Databases and Retrievers', org:'IBM', date:'October 2026', type:'Course', url:'https://coursera.org/verify/63PV811XWTZB', field:'ai-ml' },
+  { name:'Vector Databases for RAG: An Introduction', org:'IBM', date:'September 2026', type:'Course', url:'https://coursera.org/verify/YA6MA817GXOA', field:'ai-ml' },
+  { name:'Build RAG Applications: Get Started', org:'IBM', date:'September 2026', type:'Course', url:'https://coursera.org/verify/8HIWULUQQX08', field:'ai-ml' },
   { name:'Develop Generative AI Applications: Get Started', org:'IBM', date:'September 2026', type:'Course', url:'https://coursera.org/verify/79O6C7E82NBE', field:'ai-ml' },
   { name:'Google AI Professional Certificate', org:'Google', date:'September 2026', type:'Specialization / Professional Certificate', url:'https://www.coursera.org/account/accomplishments/specialization/3RSORDPVFD9P', field:'ai-ml' },
   { name:'Principles of UX/UI Design', org:'Meta', date:'December 2023', type:'Course', url:'https://www.coursera.org/account/accomplishments/verify/JE78R5A3ZT57', field:'professional' },
